@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promises</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        var val = 10;
+        var res = new Promise((resolve,reject)=>{
+            if(val === 100){
+                setTimeout(resolve,5000);
+            }else{
+                reject("Wrong value supplied");
+            }
+        });
+        res.then((res)=>{
+            console.log("Finished");
+        })
+        .catch((err)=> {
+            console.log(err);
+        })
+        .finally(()=>{
+            console.log("Nugen");
+        });
+        
+    </script>
+</body>
+
+</html>
